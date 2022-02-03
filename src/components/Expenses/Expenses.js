@@ -9,9 +9,25 @@ const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2020');
 
   const filterChangeHandler = selectedYear => {
-    console.log('in expense.js');
-    console.log(selectedYear);
+    // console.log('in expense.js');
+    // console.log(selectedYear);
     setFilteredYear(selectedYear);
+  }
+
+  const filteredExpenses = props.items.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
+  let expenseContent = <p>No expenses for this year</p>;
+  if (filteredExpenses.length > 0) {
+    expenseContent = filteredExpenses.map((expense) => (
+      <ExpenceItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+    ))
   }
 
   return (
@@ -21,15 +37,9 @@ const Expenses = (props) => {
           selected={filteredYear}
           onYearChange={filterChangeHandler}
         />
-        {props.items.map((expense) => (
-          <ExpenceItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}
-        
+
+        {expenseContent}
+
       </Card>
     </div>
   );

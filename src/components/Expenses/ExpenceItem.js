@@ -21,6 +21,7 @@ const ExpenceItem = (props) => {
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
+      {/* {typeof(props.date.getFullYear())} */}
       {/* <button onClick={clickHandler}>Change Title</button> */}
     </Card>
   );
