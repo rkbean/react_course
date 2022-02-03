@@ -14,6 +14,7 @@ const ExpenceItem = (props) => {
   // };
 
   return (
+    <li>
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
 
@@ -24,6 +25,7 @@ const ExpenceItem = (props) => {
       {/* {typeof(props.date.getFullYear())} */}
       {/* <button onClick={clickHandler}>Change Title</button> */}
     </Card>
+    </li>
   );
 };
 
