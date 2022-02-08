@@ -48,7 +48,7 @@ const ExpneseForm = (props) => {
 
     const enteredData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate)
     };
 

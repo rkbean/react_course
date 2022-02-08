@@ -5,7 +5,7 @@ import './ExpenceItem.css';
 
 const ExpenceItem = (props) => {
   // const [title, setTitle] = useState(props.title);
-  
+
   // // let title = props.title;
 
   // const clickHandler = () => {
@@ -15,16 +15,16 @@ const ExpenceItem = (props) => {
 
   return (
     <li>
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
 
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-      {/* {typeof(props.date.getFullYear())} */}
-      {/* <button onClick={clickHandler}>Change Title</button> */}
-    </Card>
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+        {/* {typeof(props.date.getFullYear())} */}
+        {/* <button onClick={clickHandler}>Change Title</button> */}
+      </Card>
     </li>
   );
 };
